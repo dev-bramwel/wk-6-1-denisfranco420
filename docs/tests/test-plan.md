@@ -3,6 +3,7 @@
 
 This Test Plan describes the testing strategy, scope, objectives, schedule, and deliverables for the Bookstore Management System.
 The system allows users to browse, search, and purchase books online while enabling admins to manage inventory, orders, and customer information.
+
 2. Objectives
 - Verify that users can search, view, and purchase books successfully.
 - Ensure admin functions (add, edit, delete books) work correctly.
