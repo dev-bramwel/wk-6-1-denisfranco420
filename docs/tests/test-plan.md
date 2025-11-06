@@ -63,7 +63,7 @@ Testing will be manual, executed on Chrome browser in a local environment.
 
 8. Roles & Responsibilities
 
-| Role             | Responsibilities                                |
+| Role             | Responsibilities                                | 
 | ---------------- | ----------------------------------------------- |
 | **Test Manager** | Prepare test plan, track progress, assign tasks |
 | **Test Analyst** | Design and execute test cases                   |
