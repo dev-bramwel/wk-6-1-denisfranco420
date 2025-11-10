@@ -22,9 +22,9 @@ Browse titles, search, filter, and sort.
 
 ### ✅ Acceptance Criteria
 - Search is case‑insensitive, trims whitespace; empty query returns full list. ❌
-- Filters combine with AND semantics; each empty‑state message states which filter eliminates results.
-- Sorting indicates active field/direction; tie‑breakers stable.
-- All card images: `loading="lazy"`, explicit `width/height`, alt text includes title + author.
+- Filters combine with AND semantics; each empty‑state message states which filter eliminates results. ✅
+- Sorting indicates active field/direction; tie‑breakers stable. ❌
+- All card images: `loading="lazy"`, explicit `width/height`, alt text includes title + author.  
 - Known limitation (intentional): diacritics not normalized; add tests to expose.
 
 ### 🧪 Scenario Checklist
