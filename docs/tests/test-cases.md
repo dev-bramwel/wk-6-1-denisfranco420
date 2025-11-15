@@ -6,7 +6,6 @@
 | TC-003 | Checkout Payment | User with items in cart | 1. Proceed to checkout <br> 2. Fill payment details <br> 3. Click “Pay” | Payment confirmation message | works as expected |✅ pass |
 | TC-004 | Filter by Genre | User on catalog page | 1. Select “Fiction” from filter dropdown | Only fiction books displayed | Filter not applied | ❌ Fail |
 | TC-005 | Filter by Price | User on catalog page | 1. Select “Fiction” from filter dropdown | SHow books in the price range | Filter not applied | ❌ Fail |
-| TC-020 | Filter by Rating | User on catalog page | 1. Select “Fiction” from filter dropdown | Show books in the rating range | Filter not applied | ❌ Fail |
 | TC-006 | Book details view | User on catalog page | Select a book card | Show book details  | Details not shown | ❌ Fail |
 | TC-007 | Book availability not shown | User on catalog page | 1. User on catalog page | Show wheather in or out of stock | Availability not displayed | ❌ Fail |
 | TC-008 | Remove Item from cart | User on checkout page | 1. select "remove" on the checkout page | Item is removed and total price updated | WOrks as expected | ✅ Pass |
@@ -22,6 +21,7 @@
 | TC-017 | Search by Order ID | User on catalog/checkout page |1. Use the checkout page <br>2. Change the display of the user screen | Items and objects change responsively | Works as expected | ✅ Pass |
 | TC-018 | Filter by Author | User on catalog page | 1. Select search and write Author name | Display books by author | Works as expected | ✅ Pass |
 | TC-019 | Invalid Address on Payment | User on checkout page | 1. Input an invalid address on the checkout form | Payment flow interupted | Payment is Continued | ❌ Fail |
+| TC-020 | Filter by Rating | User on catalog page | 1. Select “Fiction” from filter dropdown | Show books in the rating range | Filter not applied | ❌ Fail |
 | TC-021  | Wishlist Add                     | User logged in          | 1. Click wishlist icon on book                                        | Book added to wishlist                           | -              | Pending |
 | TC-022  | Wishlist Remove                  | Wishlist page open      | 1. Click remove on wishlist item                                      | Item removed                                     | -              | Pending |
 | TC-023  | Order History Display            | User logged in          | 1. Navigate to Order History                                          | Order list displayed                             | -              | Pending |
