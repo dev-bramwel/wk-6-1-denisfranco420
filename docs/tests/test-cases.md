@@ -43,15 +43,13 @@
 | TC-039  | Search Autocomplete Suggestions  | Homepage                | 1. Type slowly in search bar                                        | Suggestions appear                                | Works as expected     | ✅ Pass |
 | TC-040  | 404 Error Handling               | Enter random invalid URL | 1. Go to /random-url-xyz                                            | 404 error page displayed                          | Works as expected           | ✅ Pass |
 | TC-041  | Payment taken and order created |  In checkout page  | 1. Add Items to cart<br>2. Proceed to checkout and complete payment process<br>3. Confirm Order creation | An order with a unique ID is created | Works as expected | ✅ Pass |
-| TC-042  | XSS vulnerability via markdown `javascript:` links | Enter random invalid URL | 1. Go to /random-url-xyz                                            | 404 error page displayed                          | -              | Pending |
-| TC-043  | User data isolation failure - one user sees another's data | Enter random invalid URL | 1. Go to /random-url-xyz                                            | 404 error page displayed                          | -              | Pending |
-| TC-044  | Order state corruption or invalid status transitions | Enter random invalid URL | 1. Go to /random-url-xyz                                            | 404 error page displayed                          | -              | Pending |
-| TC-045  | Authentication bypass - non-admin accessing admin functions | Enter random invalid URL | 1. Go to /random-url-xyz                                            | 404 error page displayed                          | -              | Pending |
-| TC-046  | CSV export corruption - unreadable in Excel | Enter random invalid URL | 1. Go to /random-url-xyz                                            | 404 error page displayed                          | -              | Pending |
-| TC-047 |  Performance degradation - slow page loads | Enter random invalid URL | 1. Go to /random-url-xyz                                            | 404 error page displayed                          | -              | Pending |
-| TC-048 | WCAG 2.1 AA compliance violations | Enter random invalid URL | 1. Go to /random-url-xyz                                            | 404 error page displayed                          | -              | Pending |
-| TC-049 | Minor browser compatibility issues | Enter random invalid URL | 1. Go to /random-url-xyz                                            | 404 error page displayed                          | -              | Pending |
-
+| ID       | Title                                   | Preconditions                 | Steps                               | Expected Result                                   | Actual Result                                      | Status   |
+|----------|-------------------------------------------|-------------------------------|--------------------------------------|---------------------------------------------------|----------------------------------------------------|----------|
+| TC-042   | Admin Page Access Failure                | Login through admin portal    | 1. Go to /random                     | 404 error page displayed                          | -                                                  | Pending  |
+| TC-043   | Admin Inventory Adjustment Failure       | Admin logged into dashboard   | 1. Navigate to Inventory Management  | Admin should be able to adjust existing inventory | Admin cannot adjust existing inventory             | ❌ Fail  |
+| TC-044   | Admin Catalog View Failure               | Admin logged into dashboard   | 1. Open Catalog menu                 | Catalog items should load normally                | Admin cannot view the catalog from admin dashboard | ❌ Fail  |
+| TC-045   | Admin Orders List Not Loading            | Admin logged into dashboard   | 1. Open Orders section               | Orders list should be visible                     | Admin cannot view orders list                      | ❌ Fail  |
+| TC-046   | Admin Queue Not Loading                  | Admin logged into dashboard   | 1. Open Queue section                | All queue items should load                       | Admin cannot view queue                            | ❌ Fail  |
 
 
 
