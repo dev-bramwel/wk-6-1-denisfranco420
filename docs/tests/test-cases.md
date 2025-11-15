@@ -22,8 +22,6 @@
 | TC-017 | Search by Order ID | User on catalog/checkout page |1. Use the checkout page <br>2. Change the display of the user screen | Items and objects change responsively | Works as expected | ✅ Pass |
 | TC-018 | Filter by Author | User on catalog page | 1. Select search and write Author name | Display books by author | Works as expected | ✅ Pass |
 | TC-019 | Invalid Address on Payment | User on checkout page | 1. Input an invalid address on the checkout form | Payment flow interupted | Payment is Continued | ❌ Fail |
-| ID      | Title                            | Preconditions           | Steps                                                                  | Expected Result                                 | Actual Result | Status |
-|---------|----------------------------------|--------------------------|-------------------------------------------------------------------------|--------------------------------------------------|----------------|--------|
 | TC-021  | Wishlist Add                     | User logged in          | 1. Click wishlist icon on book                                        | Book added to wishlist                           | -              | Pending |
 | TC-022  | Wishlist Remove                  | Wishlist page open      | 1. Click remove on wishlist item                                      | Item removed                                     | -              | Pending |
 | TC-023  | Order History Display            | User logged in          | 1. Navigate to Order History                                          | Order list displayed                             | -              | Pending |
