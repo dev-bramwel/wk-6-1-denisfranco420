@@ -13,10 +13,10 @@
 
 ## 🔴 VERY HIGH SEVERITY RISKS
 
-| Risk ID | Risk Description | Category | Functional Area | Likelihood | Impact | Risk Score | Mitigation Strategy |
-|---------|------------------|----------|-----------------|------------|--------|------------|-------------------|
-| RISK-001 | Payment taken but order not created | Functional | Payments (FR-O03) | 3 | 5 | **15** | End-to-end payment testing with failure scenarios; verify database consistency |
-| RISK-002 | XSS vulnerability via markdown `javascript:` links | Security | Reviews/Q&A (FR-U03) | 4 | 5 | **20** | Input sanitization testing; security penetration testing on all user inputs |
+| Risk ID | Risk Description | Category | Functional Area | Likelihood | Impact | Risk Score | Mitigation Strategy | Test case ID |
+|---------|------------------|----------|-----------------|------------|--------|------------|-------------------|----------------|
+| RISK-001 | Payment taken but order not created | Functional | Payments (FR-O03) | 3 | 5 | **15** | End-to-end payment testing with failure scenarios; verify database consistency | - |
+| RISK-002 | XSS vulnerability via markdown `javascript:` links | Security | Reviews/Q&A (FR-U03) | 4 | 5 | **20** | Input sanitization testing; security penetration testing on all user inputs |-|
 | RISK-003 | User data isolation failure - one user sees another's data | Security | User Accounts | 3 | 5 | **15** | Multi-user session testing; authorization boundary testing |
 | RISK-004 | Inventory race conditions leading to overselling | Technical | Cart/Inventory (FR-O01) | 4 | 4 | **16** | Load testing on cart operations; verify stock validation at multiple points |
 
