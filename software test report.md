@@ -22,6 +22,8 @@ No dedicated security testing tools were used, and no automation beyond Jest uni
 
 Due to the presence of several unresolved major and critical defects, incomplete feature coverage (e.g., admin functionality and user login were not fully testable), and persistent failures in core workflows, the release is **NOT recommended** at this time.
 
+<img width="956" height="545" alt="image" src="https://github.com/user-attachments/assets/7a6c9705-86a9-4c1e-859f-3f8daa6cd1b7" />
+
 ---
 
 ## 2. Test Objectives
@@ -33,6 +35,7 @@ The objectives of the testing cycle were:
 - Assess non-functional quality, including responsiveness and browser compatibility.
 - Verify performance using available browser developer tools.
 - Identify critical defects that could impact user experience or business workflows.
+
 
 ---
 
