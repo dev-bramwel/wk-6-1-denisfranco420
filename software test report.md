@@ -199,28 +199,28 @@ Devices:
 
 ### 8.2 Top Critical Defect
 
-#### **Defect ID:** BUG-008
+#### **Defect ID:** BUG-007
 
-**Title:** Login Functionality Fails to Load Page  
+**Title:** Book Availability Not Displayed  
 **Severity:** Critical  
 **Status:** Open  
-**Module:** Login  
+**Module:** catalogue  
 **Environment:** Chrome, Edge, Brave  
-**Linked Test Case:** TC-012
+**Linked Test Case:** TC-007
 
 **Description:**  
-Login page returns a **404 Not Found** error, blocking user authentication entirely.
+Availability (in/out of stock) missing on book listings
 
 **Steps to Reproduce:**
 
-1. Navigate to `/login`
-2. Attempt to load login form
+1. Navigate to `/catalog`
+2. Observe for availability
 
 **Expected Result:**  
-Login page loads and accepts user credentials.
+Book availability shown.
 
 **Actual Result:**  
-404 error page shown; users cannot log in.
+Availability option not shown.
 
 **Impact:**
 
