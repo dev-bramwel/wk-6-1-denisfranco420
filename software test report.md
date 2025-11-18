@@ -160,6 +160,8 @@ Devices:
 
 - Stable broadband connection
 - No throttling or offline mode tests performed
+  
+<img width="426" height="264" alt="image" src="https://github.com/user-attachments/assets/b192a6f7-85a5-47ec-bb01-fe14031e97c6" />
 
 ---
 
