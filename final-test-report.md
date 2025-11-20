@@ -179,9 +179,100 @@ Devices:
 
 ### 7.2 Automation Coverage
 
-- Jest unit tests executed
-- No additional automation
-- No CI test pipeline
+### 7.2.1 Overview
+
+- New unit tests were added to improve component and workflow coverage for the React frontend. These tests are implemented with Jest and React Testing Library and cover:
+   - Component behavior and interactions (render, button state, events)
+   - Pages (Cart, Checkout, Order details, Admin) including routing context
+   - Service-level payment integration (mocked Paystack flow)
+
+### 7.2.2 Tests Added (key files)
+
+- `src/components/__tests__/BookCard.test.js` — Book card rendering and purchase interaction
+- `src/components/__tests__/Navbar.test.js` — Navigation, cart count and keyboard search behaviors
+- `src/components/__tests__/BookList.test.js` — List/empty-state rendering
+- `src/pages/__tests__/CartPage.test.js` — Cart rendering and item interactions
+- `src/pages/__tests__/CheckoutPage.test.js` — Full checkout flow (shipping → review → payment → confirmation)
+- `src/pages/__tests__/AdminPage.test.js` — Admin page access and basic UI checks
+- `src/pages/__tests__/OrderDetailPage.test.js` — Order not-found case and order details rendering
+- `src/pages/__tests__/PaymentWorkflow.test.js` — Payment workflow integration (Checkout -> startPayment mocked -> order becomes Paid)
+- `src/services/__tests__/CheckoutService.test.js` — Verifies `startPayment` calls into paystack wrapper (mocked)
+
+> Note: tests that rely on React Router are wrapped with `MemoryRouter`. Tests that would call external Paystack APIs are mocked to keep runs deterministic and fast.
+
+### 7.2.3 How to run tests (PowerShell)
+
+1) Install dev dependencies (one-time):
+
+```powershell
+npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
+```
+
+2) Run full test suite (CI-style, single run):
+
+```powershell
+$env:CI = 'true'; npm test -- --watchAll=false
+```
+
+3) Run tests in watch mode (developer iteration):
+
+```powershell
+npm test
+```
+
+4) Run a single test by test name (match the `test(...)` title):
+
+```powershell
+$env:CI = 'true'; npm test -- -t "payment workflow"
+```
+
+5) Run a single test file using Jest directly (alternative):
+
+```powershell
+npx jest src/pages/__tests__/PaymentWorkflow.test.js -i
+```
+
+### 7.2.4 CI Automation (recommended)
+
+Add a GitHub Actions workflow to run tests on push/PR. Example `.github/workflows/test.yml`:
+
+```yaml
+name: CI - Tests
+
+on:
+   push:
+      branches: [ main ]
+   pull_request:
+      branches: [ main ]
+
+jobs:
+   tests:
+      runs-on: ubuntu-latest
+      steps:
+         - uses: actions/checkout@v4
+         - name: Use Node.js
+            uses: actions/setup-node@v4
+            with:
+               node-version: 18
+         - name: Install dependencies
+            run: npm ci
+         - name: Run tests
+            run: npm test -- --watchAll=false
+
+```
+
+### 7.2.5 Notes & Guidance
+
+- Mock external integrations (Paystack) in unit tests to avoid network calls — the project uses `jest.mock('../../utils/paystack')` / `jest.mock('../../services/CheckoutService')` in tests.
+- Wrap components that use `react-router` hooks (`useNavigate`, `useParams`, `Link`) with `MemoryRouter` in tests.
+- For locale-dependent values such as currency formatting, tests use numeric matching or regex rather than exact formatted strings (NBSP and locale differences can cause flaky failures).
+- If you see React Router future-flag warnings in test output, they are informational; they don't fail the test but can be silenced by opting into the v7 flags or upgrading when compatible.
+
+### 7.2.6 Troubleshooting
+
+- If tests fail complaining about missing testing libs, install the `@testing-library/*` packages shown above.
+- If a test is timing-sensitive (e.g., loading states or callbacks), use `waitFor` and control the mocked promise resolution so assertions wait for state updates.
+- When asserting arrays or repeated headings (e.g., multiple "Shipping" headings), use `getAllByText` and assert the number or presence rather than `getByText` which fails on multiple matches.
 
 ---
 
